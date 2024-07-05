@@ -1,110 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-.preloader--hide {
-  opacity: 0;
-  visibility: hidden;
-  z-index: -999;
-}
-
-.preloader {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  z-index: 100000000000000000000;
-  transition: all 0.09 ease-out;
-}
-.preloader .preloader__loader {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.preloader .preloader__percents {
-  font-family: Arial, sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-  position: fixed;
-  top: 65%;
-  left: 85%;
-  transform: translate(-50%, -50%);
-}
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #212121;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  color: #ccc;
-  font-family: sans-serif;
-  font-size: 18px;
-}
-
-.range {
-  position: relative;
-  background-color: #333;
-  width: 300px;
-  height: 30px;
-  transform: skew(30deg);
-  font-family: "Orbitron", monospace;
-}
-.range:before {
-  --width: calc(var(--p) * 1%);
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #F3E600;
-  z-index: 0;
-  animation: load 0.5s forwards linear, glitch 2s infinite linear;
-}
-.range:after {
-  counter-reset: progress var(--p);
-  content: counter(progress) "%";
-  color: #000;
-  position: absolute;
-  left: 5%;
-  top: 50%;
-  transform: translateY(-50%) skewX(-30deg);
-  z-index: 1;
-}
-.range__label {
-  transform: skew(-30deg) translateY(-100%);
-  line-height: 1.5;
-}
-
-@keyframes load {
-  to {
-    width: var(--width);
-  }
-}
-@keyframes glitch {
-  0%, 5% {
-    transform: translate(0, 0);
-  }
-  1% {
-    transform: translate(-5%, -10%);
-  }
-  2% {
-    transform: translate(10%, 30%);
-  }
-  3% {
-    transform: translate(-43%, 10%);
-  }
-  4% {
-    transform: translate(2%, -23%);
-  }
-}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -112,6 +5,8 @@ body {
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -425,9 +320,9 @@ template {
 
 @media (min-width: 0px) {
   .container {
-    max-width: 1315px;
+    max-width: 1360px;
     margin: 0 auto;
-    padding: 0px 5px;
+    padding: 0px 20px;
   }
 }
 a {
@@ -446,4 +341,207 @@ button {
 
 body {
   font-family: "Helvetica Neue medium", sans-serif;
+}
+
+.header {
+  height: 141px;
+  width: 100%;
+  background-color: #ffffff;
+  position: sticky;
+  z-index: 123456789;
+  top: 0;
+}
+.header .nav .header__div-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  width: 100%;
+  height: 55px;
+  box-shadow: rgba(0, 0, 0, 0.123) 0px 20px 10px -20px;
+}
+.header .nav .header__div-1 .header__homburger {
+  background-color: #fff;
+  border: 2px solid rgb(233, 233, 233);
+  padding: 6px;
+  border-radius: 10px;
+}
+.header .nav .header__div-1 .header__imput-div {
+  display: flex;
+  gap: 40px;
+}
+.header .nav .header__div-1 .header__imput-div .header__list .header__item .header__link {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0.4799999893px;
+  text-align: left;
+  color: #000;
+  display: inline-block;
+  padding: 5px 0px;
+  position: relative;
+  transition: 0.4s;
+}
+.header .nav .header__div-1 .header__imput-div .header__list .header__item .header__link::after {
+  content: "";
+  position: absolute;
+  bottom: o;
+  left: 0;
+  width: 0;
+  height: 3px;
+  border-radius: 10px;
+  background: rgb(245, 62, 50);
+  transition: 0.4s;
+  margin-top: 30px;
+}
+.header .nav .header__div-1 .header__imput-div .header__list .header__item .header__link:hover::after {
+  width: 100%;
+}
+.header .nav .header__div-1 .header__imput-div .header__list .header__item .header__link:hover {
+  color: rgb(245, 62, 50);
+  text-shadow: 0 0 20px rgb(245, 62, 50);
+  font-size: 16px;
+}
+.header .nav .header__div-1 .header__imput-div .header__input {
+  border: none;
+}
+.header .nav .header__div-1 .header__div-tel {
+  display: flex;
+  gap: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22.5px;
+  letter-spacing: 0.4799999893px;
+  text-align: left;
+  color: #000;
+}
+.header .nav .header__div-2 {
+  display: flex;
+  width: 100%;
+  height: 86px;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .nav .header__div-2 .header__logo {
+  margin-left: -19px;
+}
+.header .nav .header__div-2 .header__div-imput {
+  width: 600px;
+  height: 45px;
+  top: 20px;
+  left: 250.02px;
+  gap: 0px;
+  opacity: 0px;
+  border: 1px solid rgb(100, 180, 150);
+  border-radius: 7px;
+  display: flex;
+}
+.header .nav .header__div-2 .header__div-imput .input {
+  width: 426px;
+  border: none;
+  border-radius: 7px;
+  padding-left: 16px;
+}
+.header .nav .header__div-2 .header__div-imput .header__input {
+  border: 1px solid rgb(100, 180, 150);
+}
+.header .nav .header__div-2 .header__div-imput .header_-_ {
+  width: 48px;
+  height: 45px;
+  left: 555px;
+  padding: 15px 15.27px 16px 15.25px;
+  gap: 0px;
+  border-radius: 0px 5px 5px 0px;
+  opacity: 0px;
+  background-color: rgb(245, 62, 50);
+  margin-top: -1px;
+}
+.header .nav .header__div-2 .header__div-link {
+  display: flex;
+  gap: 20px;
+}
+.header .nav .header__div-2 .header__div-link .header__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0.4799999893px;
+  text-align: left;
+  color: #000;
+}
+
+.section {
+  background-image: url(/img/Section.png);
+  width: 100%;
+  height: 864px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 268px;
+}
+.section .section__div .section__text-div {
+  display: flex;
+  gap: 5px;
+}
+.section .section__div .section__text-div .section__text-1 {
+  color: rgb(245, 62, 50);
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.4799999893px;
+  text-align: left;
+}
+.section .section__div .section__text-div .section__text-2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.4799999893px;
+  text-align: left;
+  color: #000;
+}
+.section .section__div .section__text-3 {
+  font-family: Arial;
+  font-size: 55px;
+  font-weight: 900;
+  line-height: 68px;
+  letter-spacing: 0.4799999893px;
+  text-align: left;
+  margin: 13px 0px 18px 0px;
+}
+.section .section__div .section__text-4 {
+  color: rgb(122, 122, 122);
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 26.25px;
+  letter-spacing: 0.4799999893px;
+  text-align: left;
+}
+.section .section__div .section__btn {
+  background-color: rgb(245, 62, 50);
+  width: 118px;
+  height: 40px;
+  padding: 11.59px 22.69px 12.41px 23px;
+  border-radius: 5px;
+  border: 1px rgb(245, 62, 50);
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.8px;
+  letter-spacing: 0.4799999893px;
+  color: #fff;
+  margin-top: 33px;
+  transition: 0.7s;
+}
+.section .section__div .section__btn:hover {
+  color: rgb(245, 62, 50);
+  background-color: rgb(242, 211, 191);
+  box-shadow: 0 0 20px rgb(245, 62, 50);
 }/*# sourceMappingURL=stail.css.map */
