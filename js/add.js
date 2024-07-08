@@ -1,15 +1,19 @@
-// let days = document.getElementById("deys")
-let hrs = document.getElementById("hrs");
-let minut = document.getElementById("minut");
-let second = document.getElementById("second");
+function updateDateTime() {
+  const now = new Date();
 
-setInterval(()=>{
-  let currenTime = new Date();
-// days.innerHTML = currenTime.getHours();  
-hrs.innerHTML = currenTime.getHours();
-minut.innerHTML = currenTime.getMinutes();
-second.innerHTML = currenTime.getSeconds();
-},1000)
+  const options = {  day: '2-digit' };
+  const date = now.toLocaleDateString('ru-RU', options);
+
+  const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+  const time = now.toLocaleTimeString('ru-RU', timeOptions);
+
+  const formattedDateTime = `${date} : ${time}`;
+  document.getElementById('datetime').textContent = formattedDateTime;
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();  // Initial call to display the time immediately
+
 
 
 
